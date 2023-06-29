@@ -31,7 +31,7 @@
 #include <trajectory_msgs/JointTrajectory.h>
 #include <trajectory_msgs/JointTrajectoryPoint.h>
 
-#include "open_manipulator_libs/open_manipulator.h"
+#include "../../../open_manipulator_libs/include/open_manipulator_libs/open_manipulator.h"
 #include "open_manipulator_msgs/SetJointPosition.h"
 #include "open_manipulator_msgs/SetKinematicsPose.h"
 #include "open_manipulator_msgs/SetDrawingTrajectory.h"

@@ -1,0 +1,16 @@
+<launch>
+    <arg name="uav_id" default="1"/>
+
+    <group ns="/uav$(arg uav_id)">
+        <arg name="usb_port"     default="/dev/ttyUSB0"/>
+        <arg name="baud_rate"    default="1000000"/>
+        <arg name="control_period"         default="0.010"/>
+        <arg name="use_platform"           default="false"/>
+
+        <node name="open_manipulator_controller_uav$(arg uav_id)" pkg="open_manipulator_controller" type="open_manipulator_controller" 
+            output="screen" args="$(arg usb_port) $(arg baud_rate)">
+            <param name="control_period"       value="$(arg control_period)"/>
+            <param name="using_platform"       value="$(arg use_platform)"/>
+        </node>
+    </group>
+</launch>

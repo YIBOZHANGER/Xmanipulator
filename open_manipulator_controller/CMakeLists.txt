@@ -66,10 +66,18 @@ add_executable(open_manipulator_controller src/open_manipulator_controller.cpp)
 add_dependencies(open_manipulator_controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(open_manipulator_controller ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 
+add_executable(omx_gripper_sub_publisher src/omx_gripper_sub_publisher.cpp)
+add_dependencies(omx_gripper_sub_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(omx_gripper_sub_publisher ${catkin_LIBRARIES})
+
 ################################################################################
 # Install
 ################################################################################
 install(TARGETS open_manipulator_controller
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(TARGETS omx_gripper_sub_publisher
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
